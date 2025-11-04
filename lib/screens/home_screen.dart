@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/routes/app_routes.dart';
 import 'package:flutter_application_1/screens/screens.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,14 +11,14 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(title: Text("componentes"), elevation: 50),
       body: ListView.separated(
         itemBuilder: (context, index) => ListTile(
-          leading: Icon(Icons.minimize),
-          title: Text("feiwjoew"),
+          leading: Icon(AppRoutes.menuOptions[index].icon),
+          title: Text(AppRoutes.menuOptions[index].name),
           onTap: () {
-            Navigator.pushNamed(context, "greg");
+            Navigator.pushNamed(context, AppRoutes.menuOptions[index].route);
           },
         ),
         separatorBuilder: (context, index) => Divider(),
-        itemCount: 5,
+        itemCount: AppRoutes.menuOptions.length,
       ),
     );
   }
