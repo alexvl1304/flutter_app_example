@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/routes/app_routes.dart';
 import 'package:flutter_application_1/screens/screens.dart';
+import 'package:flutter_application_1/screens/theme/app_theme.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,7 +11,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("componentes"), elevation: 50),
+      appBar: AppBar(
+        title: Text("componentes"),
+        backgroundColor: AppTheme.primaryColor,
+      ),
       body: ListView.separated(
         itemBuilder: (context, index) => ListTile(
           leading: Icon(AppRoutes.menuOptions[index].icon),
