@@ -5,6 +5,8 @@ import 'package:flutter_application_1/screens/screens.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
+  //Un listview dontro de otro listview
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
