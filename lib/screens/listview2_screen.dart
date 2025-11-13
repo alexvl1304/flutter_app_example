@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/routes/series_routes.dart';
+import 'package:flutter_application_1/screens/theme/app_theme.dart';
 
 class Listview2Screen extends StatelessWidget {
-   
-  final options = const["rhetrh", "fwfewf", "kutjtyjt", "grgerger", "rwgerht", "rhetrh", "fwfewf", "kutjtyjt", "grgerger", "rwgerht", "rhetrh", "fwfewf", "kutjtyjt", "grgerger", "rwgerht"];
 
   const Listview2Screen({Key? key}) : super(key: key);
   
@@ -10,23 +10,19 @@ class Listview2Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List View 2"),
-        backgroundColor: Colors.deepOrangeAccent,
+        title: Text("Lista de series"),
+        backgroundColor: AppTheme.primaryColor,
       ),
       body: ListView.separated(
-
         itemBuilder: (context, index) => ListTile(
-          trailing: Icon(Icons.arrow_forward_ios_outlined),
-          title: Text(options[index]),
+          trailing: Icon(SeriesRoutes.menuSeries[index].icon),
+          title: Text(SeriesRoutes.menuSeries[index].name),
           onTap: () {
-            
-            final casa = options[index];
-
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SeriesRoutes.menuSeries[index].screen));
           },
         ),
-        separatorBuilder: (context, index) => const Divider(),
-        itemCount: options.length,
-
+        separatorBuilder: (context, index) => Divider(),
+        itemCount: SeriesRoutes.menuSeries.length,
       ),
     );
   }

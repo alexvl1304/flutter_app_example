@@ -21,7 +21,7 @@ class AppRoutes {
     MenuOption(
       route: "listview2",
       icon: Icons.list_alt_outlined,
-      name: "ListView 2",
+      name: "Lista de series",
       screen: const Listview2Screen(),
     ),
     MenuOption(
