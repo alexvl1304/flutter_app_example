@@ -1,1 +1,2 @@
-export 'package:flutter_application_1/widget/custom_card_tipo1.dart';
+export 'custom_card_tipo1.dart';
+export 'custom_card_tipo2.dart';
